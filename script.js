@@ -11,8 +11,7 @@ button.addEventListener('click', () => {
     
     const cityInput = inputTxt.value;
     // console.log(cityInput);
-
-    //Now Fetch Through Get API 
+    
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&units=metric&APPID=${API_Key}`)
         .then(res => res.json())
         .then(data => {
@@ -21,7 +20,6 @@ button.addEventListener('click', () => {
             //When Fill Input Field Then Clear Input Field
             inputTxt.value = " ";
 
-            //Now Show All Data Value
             showData.innerHTML = `
                                 <ul>
                                     <li class="desc">${data.weather[0].description}</li>
